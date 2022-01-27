@@ -95,7 +95,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 # CUSTOM AUTH USER MODE
 AUTH_USER_MODEL = 'account.User'
 
-ROOT_URLCONF = '{{cookiecutter.project_name}}.urls'
+ROOT_URLCONF = '{{cookiecutter.repo_name}}.urls'
 
 TEMPLATES = [
     {
@@ -113,7 +113,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = '{{cookiecutter.project_name}}.wsgi.application'
+WSGI_APPLICATION = '{{cookiecutter.repo_name}}.wsgi.application'
 
 
 # Database

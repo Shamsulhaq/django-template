@@ -6,9 +6,9 @@ import os
 from celery import Celery
 from django.conf import settings
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "spacium.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{cookiecutter.repo_name}}.settings")
 
-app = Celery('spacium')
+app = Celery('{{cookiecutter.repo_name}}')
 
 app.config_from_object('django.conf:settings')
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)

@@ -1,6 +1,6 @@
-from backend.celery import app
-from backend.mail import send_mail_from_template
-from backend.sms import send_otp
+from {{cookiecutter.repo_name}}.celery import app
+from {{cookiecutter.repo_name}}.mail import send_mail_from_template
+from {{cookiecutter.repo_name}}.sms import send_otp
 
 
 @app.task
