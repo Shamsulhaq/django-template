@@ -1,0 +1,15 @@
+*.pyc
+db.sqlite3
+tasks
+.idea
+local.py
+celerybeat-schedule
+.vscode
+.env
+Pipfile.lock
+firebase_adminsdk.json
+
+### macOS ###
+.DS_Store
+.AppleDouble
+.LSOverride
