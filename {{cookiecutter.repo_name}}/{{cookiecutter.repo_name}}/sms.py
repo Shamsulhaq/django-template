@@ -12,5 +12,5 @@ client = boto3.client(
 def send_otp(phone, otp):
     client.publish(
         PhoneNumber=phone,
-        Message=f"{otp} is your Spacium verification code."
+        Message=f"{otp} is your '{{cookiecutter.repo_name}}' verification code."
     )

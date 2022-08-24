@@ -5,7 +5,7 @@ from django.core.mail import EmailMessage
 from django.forms.fields import EmailField
 from django.template.loader import get_template
 
-SENDER = getattr(settings, "DEFAULT_FROM_EMAIL", "backend <no-reply@backend.com>")
+SENDER = getattr(settings, "DEFAULT_FROM_EMAIL", '{{cookiecutter.repo_name}} <no-reply@{{cookiecutter.repo_name}}.com>')
 CHARSET = "UTF-8"
 
 

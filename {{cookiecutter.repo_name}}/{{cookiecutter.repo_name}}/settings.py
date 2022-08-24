@@ -34,7 +34,7 @@ EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', 'spacium <no-reply@spacium.ae>')
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', '{{cookiecutter.repo_name}} <no-reply@{{cookiecutter.repo_name}}.com>')
 
 # firebase config
 FIREBASE_CONFIG_PATH = "firebase_adminsdk.json"
@@ -43,7 +43,7 @@ FCM_KEY = config('SERVER_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', False)
+DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
@@ -122,7 +122,7 @@ WSGI_APPLICATION = '{{cookiecutter.repo_name}}.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': config('ENGINE'),
-        'NAME': config('NAME'),
+        'NAME': config('NAME', '{{cookiecutter.database_name}}'),
         'USER': config('DB_USER'),
         'PASSWORD': config("PASSWORD"),
         'HOST': config('HOST'),
@@ -192,7 +192,7 @@ STATIC_URL = 'static/'
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY')
-AWS_STORAGE_BUCKET_NAME = 'spacium-cdn'
+AWS_STORAGE_BUCKET_NAME = '{{cookiecutter.s3_bucked_name}}'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'

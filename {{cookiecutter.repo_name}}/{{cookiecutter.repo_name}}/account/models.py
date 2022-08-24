@@ -17,7 +17,7 @@ from ..core.models import BaseModel
 
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """Store custom user information.
+    """{{cookiecutter.repo_name}} user information.
     all fields are common for all users."""
     username = models.CharField(
         _('username'),
